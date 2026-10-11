@@ -268,7 +268,7 @@ def list_attendance(
 
     # Convert MongoDB ObjectId to string
     for d in docs:
-        d["id"] = str(d.pop("_id"))
+        d.pop("_id", None)
 
     return {
         "items": docs,
